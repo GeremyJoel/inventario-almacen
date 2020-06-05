@@ -1,0 +1,11 @@
+.image-profile{
+    width: 20%;
+    float: left;;
+    margin-right: -93px;
+    padding-top: 10px;
+}
+.image-profile img{
+    width: auto;
+    border-radius: 50%;
+
+}

@@ -20,7 +20,7 @@
                     <td><?php echo $datos['cantidad'];?></td>
                     <td><?php echo $datos['descripcion'];?></td>
                     <td><?php echo $datos['movimiento'];?></td>
-                    <td><?php echo $datos['fecha_caducidad'];?></td>
+                    <td><?php echo date('d-m-Y',strtotime($datos['fecha_caducidad']));?></td>
                     <td><span uk-icon="pencil" class="btn btn-success"></span><span class="btn btn-danger"
                             uk-icon="trash"></span></td>
                 </tr>

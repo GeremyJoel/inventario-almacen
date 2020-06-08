@@ -27,10 +27,6 @@ switch($accion){
         newStock($producto,$cantidad);
         break;
 
-    case 'mostrar':
-
-        break;
-
     case 'listar':
             $datos =mostrarUltimoEn();
             require_once('../vista/componentes/entradas_nuevas.php');

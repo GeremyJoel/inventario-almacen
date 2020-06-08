@@ -65,6 +65,12 @@ class Salida{
     function delSalida(){
         
     }
+
+    function getSalida(){
+        $stmt = $this->db->prepare('SELECT * FROM salidas AS s INNER JOIN producto AS p WHERE s.producto = p.idProducto');
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }
 
 ?>

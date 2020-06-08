@@ -35,4 +35,27 @@ function newStock($id,$cant){
     echo $new_stock;
     mysqli_query($conn,'UPDATE producto SET existencia='.$new_stock.' WHERE idProducto='.$id);
 }
+
+function newStockMenos($id,$cant){
+    global $conn;
+    $sql = mysqli_query($conn,'SELECT * FROM producto WHERE idProducto = '.$id);
+    $res = mysqli_fetch_array($sql);
+    $stock = $res['existencia'] - $cant;
+    mysqli_query($conn,'UPDATE producto SET existencia='.$stock.' WHERE idProducto='.$id);
+}
+
+function newPartida($id,$costo,$cantidad){
+    global $conn;
+    $total = $costo * $cantidad;
+    
+
+}
+
+function newFfinanciamiento($id,$costo,$cantidad){
+
+}
+
+function newPrograma($id,$costo,$cantidad){
+
+}
 ?>

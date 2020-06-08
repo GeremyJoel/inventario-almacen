@@ -40,7 +40,7 @@ $(document).ready(function() {
                 <?php if ($row['fecha_caducidad'] == '0000-00-00 00:00:00') {
             echo 'S/C';
         } else {
-            echo $row['fecha_caducidad'];
+            echo date('d-m-Y',strtotime($row['fecha_caducidad']));
         } ?>
             </td>
         </tr>

@@ -74,12 +74,11 @@ class Producto{
         return $stmt->fetchAll();
     }
 
-    function setProductos($idProducto, $clave, $descripcion, $unidad, $existencia){
-        $stmt = $this->db->prepare('UPDATE producto SET clave=?, descripcion=?, existencia=?,unidad_medida=?  WHERE idProducto=?');
+    function setProductos($idProducto, $clave, $descripcion, $unidad){
+        $stmt = $this->db->prepare('UPDATE producto SET clave=?, descripcion=?, unidad_medida=?  WHERE idProducto=?');
         $data = [
             $clave,
             $descripcion,
-            $existencia,
             $unidad,
             $idProducto
         ];

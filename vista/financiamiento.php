@@ -33,16 +33,6 @@ require_once('../modelo/financiamiento.php');
             <h2 class="uk-modal-title">Agrega Fuente</h2>
         </div>
         <div class="uk-modal-body">
-            <div class="form-row">
-                <div class="col-md-4">
-                    <div>
-                        <label for="">Importe de Fuente</label>
-                    </div>
-                    <div>
-                        <input type="text" class="form-control" id="importe" placeholder="Importe Fuente">
-                    </div>
-                </div>
-            </div>
             <div class="mt-2">
                 <div>
                     <label for="">Fuente de financiamiento</label>

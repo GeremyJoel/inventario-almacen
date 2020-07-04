@@ -34,21 +34,12 @@ require_once('../modelo/partida.php');
         </div>
         <div class="uk-modal-body">
             <div class="form-row">
-                <div class="col">
+                <div class="col-6">
                     <div>
                         <label for=""><b>Numero de partida</b> </label>
                     </div>
                     <div>
                         <input type="number" class="form-control" id="numero" placeholder="">
-                    </div>
-                </div>
-                <div class="col">
-                    <div>
-                        <label for=""><b>Importe de la partida</b> </label>
-                    </div>
-                    <div>
-                        <input type="text" class="form-control" id="importe" placeholder="">
-
                     </div>
                 </div>
             </div>

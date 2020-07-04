@@ -14,7 +14,18 @@ switch ($accion) {
         break;
     
     case 'eliminar':
-            # code...
+            $id = $_POST['valor'];
+            $pro = new Programa();
+            $pro->delPrograma($id);
+        break;
+
+    case 'editar':
+            $id = $_POST['valor'];
+            $num = $_POST['numero'];
+            $nom = $_POST['nombre'];
+            $pro = new Programa();
+            $pro -> setPrograma($num,$nom,$id);
+            header("location:../vista/programas.php");
         break;
     
     case 'mostrar':

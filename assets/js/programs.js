@@ -25,4 +25,18 @@ function addProgram(){
         env.send("nombre="+nombre+"&importe="+importe+"&numero="+numero+"&accion=agregar");
     
 }
+
+function delPar(valor){
+    var v = valor;
+    var env = new XMLHttpRequest();
+    env.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            location.reload(true);
+        }
+    };
+        env.open("POST",'../controlador/ctrlPrograma.php',true);
+        env.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+        env.send("valor="+v+"&accion=eliminar");
+}
+
 cargar();

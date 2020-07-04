@@ -80,22 +80,26 @@ class Entrada{
     }
 
     function delEntrada($id){
-        $stmt = $this->db->prepare("DELETE FROM entrada WHERE idEntrada = :id");
+        $stmt = $this->db->prepare("DELETE FROM entradas WHERE idEntrada = :id");
         $stmt->bindParam(':id',$id,PDO::PARAM_INT);
         $stmt->execute();
     }
 
     function setEntrada($idEntrada,$numprograma, $financiamiento, $movimiento, $fecha,$folio){
-        $stmt = $this->db->prepare('UPDATE entrada SET numPrograma =?,fFinanciamiento=?,movimiento=?,fecha=?, folio=? WHERE idEntrada =?');
+        try{
+        $stmt = $this->db->prepare('UPDATE entradas SET numPrograma =?,fFinanciamiento=?,movimiento=?,fecha=?, folio=? WHERE idEntrada =?');
         $data = [
-            $numprograma,
-            $financiamiento,
-            $movimiento,
-            $fecha,
-            $folio,
-            $idEntrada
+            $this->numPrograma = $numprograma,
+            $this->fFinanciamiento = $financiamiento,
+            $this->movimiento = $movimiento,
+            $this->fecha = $fecha,
+            $this->folio = $folio,
+            $this->idEntrada = $idEntrada
         ];
         $stmt->execute($data);
+    }catch(PDOException $err){
+        return $err->getMessage();
+    }
     }
 
     function getEntrada(){

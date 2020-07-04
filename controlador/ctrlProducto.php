@@ -13,8 +13,14 @@ switch ($accion) {
         }
         header("location:../vista/productos.php");
         break;
-    case 'actualizar':
-
+    case 'editar':
+        $id = $_POST['valor'];
+        $clave = $_POST['clave'];
+        $descripcion = $_POST['nombre'];
+        $unidad = $_POST['UM'];
+        $prod = new Producto();
+        $prod->setProductos($id,$clave,$descripcion,$unidad);
+        header("location:../vista/productos.php");
         break;
     case 'borrar':
         $id = $_REQUEST['id'];
@@ -24,7 +30,9 @@ switch ($accion) {
     case 'mostrar':
         $prod = new Producto();
         $datos  = $prod->getProductos();
-        require_once('../vista/componentes/list-productos.php');
+        if(count($datos)>0){
+            require_once('../vista/componentes/list-productos.php');
+        }
         break;
 
     default:

@@ -90,6 +90,25 @@ class enProducto{
             $this->db->rollback();
         }
     }
+
+    function setEP($lote,$cantidad,$fecha,$costo,$producto,$entrada){
+        $stmt = $this->db->prepare('UPDATE entradaproducto SET numLote =?,cantidad=?,fecha_caducidad=?,costo_unitario=?, producto=? WHERE entrada =?');
+        $data = [
+            $this->lote = $lote, 
+            $this->cantidad = $cantidad,
+            $this->fecha = $fecha,
+            $this->costo = $costo,
+            $this->producto = $producto,
+            $this->entrada = $entrada
+        ];
+        $stmt->execute($data);
+    }
+
+    function delEP($id){
+        $stmt = $this->db->prepare("DELETE FROM entradaproducto WHERE entrada = :id");
+        $stmt->bindParam(':id',$id,PDO::PARAM_INT);
+        $stmt->execute();
+    }
 }
 
 ?>

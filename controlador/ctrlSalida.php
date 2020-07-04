@@ -17,7 +17,9 @@ $accion = $_REQUEST['accion'];
     if($accion == 'mostrar'){
         $salida = new Salida();
         $rows = $salida->getSalida();
-        require_once('../vista/componentes/tabla_salidas.php');
+        if(count($rows)>0){
+            require_once('../vista/componentes/tabla_salidas.php');
+        }
     }
 
 ?>

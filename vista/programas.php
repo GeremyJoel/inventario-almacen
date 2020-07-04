@@ -34,21 +34,12 @@ require_once('../modelo/programa.php');
         </div>
         <div class="uk-modal-body">
             <div class="form-row">
-                <div class="col">
+                <div class="col-6">
                     <div>
                         <label for="">Numero de Programa</label>
                     </div>
                     <div>
-                        <input type="text" class="form-control" id="numero" placeholder="Numero Programa">
-                    </div>
-                </div>
-                <div class="col">
-                    <div>
-                        <label for="">Importe del Programa</label>
-                    </div>
-                    <div>
-                        <input type="text" class="form-control" id="importe" placeholder="Importe programa">
-
+                        <input type="number" class="form-control" id="numero" placeholder="Numero Programa">
                     </div>
                 </div>
             </div>

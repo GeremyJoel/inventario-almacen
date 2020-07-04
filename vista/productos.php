@@ -27,8 +27,8 @@ require_once('../modelo/producto.php');
                                     <input type="text" class="form-control" name="unidad">
                                 </div>
                                 <div class="col-md-12">
-                                    <label for="descripcion">
-                                        <h4>Descripcion</h4>
+                                    <label for="nombre">
+                                        <h4>Nombre</h4>
                                     </label>
                                     <input type="text" class="form-control" name="descripcion">
                                 </div>

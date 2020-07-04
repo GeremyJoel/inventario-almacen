@@ -6,14 +6,25 @@ $accion = $_REQUEST['accion'];
 switch ($accion) {
     case 'agregar':
         $nombre = $_REQUEST['nombre'];
-        $importe = $_REQUEST['importe'];
         $numero = $_REQUEST['numero'];
         $pro = new Partida();
-        $pro->addPartida($numero,$nombre,$importe);
+        $pro->addPartida($numero,$nombre);
         break;
     
+    case 'editar':
+            $nom = $_POST['nombre'];
+            $num = $_POST['numero'];
+            $id = $_POST['valor'];
+            $par = new Partida();
+            $par->setPartida($num,$nom,$id);
+            header("location:../vista/partidas.php");
+        break;
+        
     case 'eliminar':
-            # code...
+        $id = $_POST['valor'];
+        $par = new Partida();
+        $par->delPartida($id);
+        header("location:../vista/partidas.php");
         break;
     
     case 'mostrar':

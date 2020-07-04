@@ -12,7 +12,6 @@ function cargar(){
 
 function agregar(){
     var numero = document.getElementsByName("lisa").length+1;
-    var importe = document.getElementById("importe").value;
     var nombre = document.getElementById("nombre").value;
 
     var pos = new XMLHttpRequest();
@@ -23,7 +22,19 @@ function agregar(){
     };
     pos.open('POST','../controlador/ctrlFinanciamiento.php');
     pos.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-    pos.send("nombre="+nombre+"&importe="+importe+"&numero="+numero+"&accion=agregar")
+    pos.send("nombre="+nombre+"&numero="+numero+"&accion=agregar");
 }
 
+function delFin(valor){
+    var v = valor;
+    var env = new XMLHttpRequest();
+    env.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            location.reload(true);
+        }
+    };
+    env.open('POST','../controlador/ctrlFinanciamiento.php');
+    env.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    env.send("valor="+v+"&accion=eliminar");
+}
 cargar();

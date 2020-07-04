@@ -73,9 +73,9 @@ CREATE TABLE `ffinanciamiento` (
 -- Volcado de datos para la tabla `ffinanciamiento`
 --
 
-INSERT INTO `ffinanciamiento` (`idFuente`, `numFuente`, `descripcion`, `importe`) VALUES
+/* INSERT INTO `ffinanciamiento` (`idFuente`, `numFuente`, `descripcion`, `importe`) VALUES
 (1, 1, 'Primer Financiamiento', '2355.00'),
-(2, 2, 'Otro Financiamiento', '0.00');
+(2, 2, 'Otro Financiamiento', '0.00'); */
 
 -- --------------------------------------------------------
 
@@ -95,9 +95,9 @@ CREATE TABLE `partida` (
 -- Volcado de datos para la tabla `partida`
 --
 
-INSERT INTO `partida` (`idPartida`, `partidaAnt`, `numPartida`, `nombre`, `importe`) VALUES
+/* INSERT INTO `partida` (`idPartida`, `partidaAnt`, `numPartida`, `nombre`, `importe`) VALUES
 (1, 12, 12, 'cualquier nombre', '300.00'),
-(2, 23, 23, 'Geremy Joel', '374.00');
+(2, 23, 23, 'Geremy Joel', '374.00'); */
 
 -- --------------------------------------------------------
 
@@ -116,10 +116,10 @@ CREATE TABLE `producto` (
 --
 -- Volcado de datos para la tabla `producto`
 --
-
+/* 
 INSERT INTO `producto` (`idProducto`, `clave`, `descripcion`, `existencia`, `unidad_medida`) VALUES
 (1, '3u32ur', 'Aspirina', 0, 'Caja'),
-(2, 'dvsvewvds', 'Metformina', 0, 'Caja');
+(2, 'dvsvewvds', 'Metformina', 0, 'Caja'); */
 
 -- --------------------------------------------------------
 
@@ -138,9 +138,9 @@ CREATE TABLE `programa` (
 -- Volcado de datos para la tabla `programa`
 --
 
-INSERT INTO `programa` (`idPrograma`, `numPrograma`, `nomPrograma`, `importe`) VALUES
+/* INSERT INTO `programa` (`idPrograma`, `numPrograma`, `nomPrograma`, `importe`) VALUES
 (1, 1241, 'Primer Programa Presupuestal', '0.00'),
-(2, 13, 'Este es el segundo programa', '0.00');
+(2, 13, 'Este es el segundo programa', '0.00'); */
 
 -- --------------------------------------------------------
 

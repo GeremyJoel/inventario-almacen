@@ -47,9 +47,10 @@ function newStockMenos($id,$cant){
 function newPartida($id,$costo,$cantidad){
     global $conn;
     $total = $costo * $cantidad;
-    
 
 }
+
+function UpEntrada(){}
 
 function newFfinanciamiento($id,$costo,$cantidad){
 

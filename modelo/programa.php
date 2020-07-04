@@ -57,6 +57,20 @@ class Programa{
         }
     }
 
+    function setPrograma($numPrograma,$nomPrograma,$id){
+        try{
+            $sql = $this->db->prepare('UPDATE programa SET numPrograma = ?,nomPrograma = ? WHERE idPrograma = ?');
+            $data = [
+                $this->numPrograma = $numPrograma,
+                $this->nomPrograma = $nomPrograma,
+                $this->idPrograma = $id
+            ];
+            $sql->execute($data);
+        }catch(PDOException $ex){
+            return $ex->getMessage();
+        }
+    }
+
     function delPrograma($id){
         $stmt = $this->db->prepare("DELETE FROM programa WHERE idPrograma = :id");
         $stmt->bindParam(':id',$id,PDO::PARAM_INT);

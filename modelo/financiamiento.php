@@ -41,13 +41,26 @@ class Financiamiento{
         $this->importe = $importe;
     }
 
-    function addFinanciamiento($numFuente,$descripcion,$importe){
+    function addFinanciamiento($numFuente,$descripcion){
         try{
-            $sql = $this->db->prepare('INSERT INTO ffinanciamiento(numFuente,descripcion,importe) VALUES(?,?,?)');
+            $sql = $this->db->prepare('INSERT INTO ffinanciamiento(numFuente,descripcion) VALUES(?,?)');
             $data = [
                 $this->numFuente = $numFuente,
-                $this->descripcion = $descripcion,
-                $this->importe = $importe
+                $this->descripcion = $descripcion
+            ];
+            $sql->execute($data);
+        }catch(PDOException $ex){
+            return $ex->getMessage();
+        }
+    }
+
+    function setFinanciamiento($numero,$nombre,$id){
+        try{
+            $sql = $this->db->prepare('UPDATE ffinanciamiento SET numFuente = ?,descripcion = ? WHERE idFuente = ?');
+            $data = [
+                $this->numFuente = $numero,
+                $this->descripcion = $nombre,
+                $this->idFuente = $id
             ];
             $sql->execute($data);
         }catch(PDOException $ex){
@@ -56,7 +69,7 @@ class Financiamiento{
     }
 
     function delFinanciamiento($id){
-        $stmt = $this->db->prepare("DELETE FROM ffinanciamiento WHERE idPrograma = :id");
+        $stmt = $this->db->prepare("DELETE FROM ffinanciamiento WHERE idFuente = :id");
         $stmt->bindParam(':id',$id,PDO::PARAM_INT);
         $stmt->execute();
     }

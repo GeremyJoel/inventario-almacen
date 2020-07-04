@@ -52,15 +52,13 @@ class Partida{
         $this->Importe = $importe;
     }
 
-    function addPartida($numPartida,$nombre,$importe){
+    function addPartida($numPartida,$nombre){
         try{
             $this->db->beginTransaction();
-            $sql = $this->db->prepare('INSERT INTO partida(partidaAnt,numPartida,nombre,importe) VALUES(?,?,?,?)');
+            $sql = $this->db->prepare('INSERT INTO partida(numPartida,nombre) VALUES(?,?)');
             $data = [
-                $this->codigo = $numPartida,
-                $this->nomPrograma = $numPartida,
-                $this->importe = $nombre,
-                $this->importe = $importe
+                $this->numPartida = $numPartida,
+                $this->nombre = $nombre
             ];
             echo $this->db->inTransaction();
             $sql->execute($data);
@@ -83,6 +81,20 @@ class Partida{
         $stmt = $this->db->prepare('SELECT * FROM partida');
         $stmt->execute();
         return $stmt->fetchAll();
+    }
+
+    function setPartida($partida,$nombre,$id){
+        try{
+        $stmt = $this->db->prepare('UPDATE partida SET numPartida = ?, nombre = ? WHERE idPartida = ?');
+        $data = [
+            $partida,
+            $nombre,
+            $id
+        ];
+        $stmt->execute($data);
+        }catch(PDOException $ex){
+            return $ex->getMesssage();
+        }
     }
 }
 ?>

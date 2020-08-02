@@ -5,7 +5,6 @@
                 <th scope="col">#</th>
                 <th scope="col">Numero de<br> partida<br>presupuestal</th>
                 <th scope="col">Nombre de la partida presupuestal</th>
-                <th scope="col">Importe por<br>partida <br> presupuestal</th>
                 <th scope="col">Acciones</th>
             </tr>
         </thead>
@@ -15,7 +14,6 @@
                 <th scope="row"><?=$con++;?></th>
                 <td><?php echo $row['numPartida'];?></td>
                 <td><?php echo $row['nombre'];?></td>
-                <td><?php echo ($row['importe']== NULL) ? "$ 0.00" : "$ ".$row['importe'];?></td>
                 <td>
                     <span uk-icon="pencil" class="btn btn-success"
                         uk-toggle="target: #modal-edit-<?=$row['idPartida'];?>"></span>

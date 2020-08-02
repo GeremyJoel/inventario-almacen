@@ -4,6 +4,9 @@
     require_once('../modelo/programa.php');
     $prog = new Programa();
     $pro = $prog->getPrograma();
+    require_once('../modelo/partida.php');
+    $part = new Partida();
+    $par = $part->getPartida();
     require_once('../modelo/producto.php');
     $prod = new Producto();
     $pr = $prod->getProductos();
@@ -17,7 +20,7 @@
         <h3 class="uk-card-title">Entradas</h3>
         <div class="row">
             <div class="col-md-2">
-                <label for="">Folio</label>
+                <label for="">Clave</label>
                 <input type="text" class="form-control" placeholder="" id="folio">
             </div>
             <div class="col-md-3">
@@ -69,7 +72,7 @@
                 <label for="">Costo Unitario</label>
                 <input type="number" class="form-control" id="costo" placeholder="">
             </div>
-            <div class="col-md-7">
+            <div class="col-md-4">
                 <label for="">Producto</label>
                 <select name="" id="producto" class="form-control">
                     <option value="">Seleccione Producto</option>
@@ -78,6 +81,20 @@
                     foreach ($pr as $r) {
                         ?>
                     <option value="<?= $r['idProducto']; ?>"><?= $r['descripcion']; ?></option>
+                    <?php
+                    }
+                ?>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="">Partida</label>
+                <select name="" id="partida" class="form-control">
+                    <option value="">Seleccione la Partida</option>
+
+                    <?php
+                    foreach ($par as $pa) {
+                        ?>
+                    <option value="<?= $pa['idPartida']; ?>"><?= $pa['nombre']; ?></option>
                     <?php
                     }
                 ?>

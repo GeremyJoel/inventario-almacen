@@ -50,6 +50,17 @@ function newPartida($id,$costo,$cantidad){
 
 }
 
+function Mostrar($valor){
+    global $conn;
+
+    $sql = 'SELECT * FROM '.$valor;
+    if($res = mysqli_query($conn,$sql)){
+        return $res;
+    }else{
+        return NULL;
+    }
+}
+
 function UpEntrada(){}
 
 function newFfinanciamiento($id,$costo,$cantidad){

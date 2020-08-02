@@ -5,7 +5,7 @@
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Folio</th>
+                    <th scope="col">Clave</th>
                     <th scope="col">Cantidad</th>
                     <th scope="col">Producto</th>
                     <th scope="col">Movimiento</th>
@@ -34,7 +34,7 @@
             <h2 class="uk-modal-title">Editar la entrada</h2>
             <div class="row">
                 <div class="col-3 mt-3">
-                    <label for="">Folio</label>
+                    <label for="">Clave</label>
                 </div>
                 <div class="col-9 mt-3">
                     <input type="text" value="<?=$datos['folio'];?>" class="form-control" id="Efolio">

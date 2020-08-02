@@ -14,7 +14,7 @@
  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css"">
 </head>
 <body>
-<nav class="uk-navbar uk-navbar-container uk-margin" uk-navbar>
+<nav class="uk-navbar uk-navbar-container uk-margin sticky-top" uk-navbar>
     <div class="uk-navbar-left">
         <a class="uk-navbar-toggle" uk-toggle href="#my-id">
             <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span>

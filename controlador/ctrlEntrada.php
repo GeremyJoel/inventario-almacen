@@ -17,10 +17,11 @@ switch ($accion) {
         $producto = $_POST['producto'];
         $fechaC = $_POST['fecha'];
         $programa = $_POST['programa'];
+        $partida = $_POST['partida'];
         $fecha = date("Y:m:d H:i:s");
         $entrada = new Entrada();
         $EP = new enProducto();
-        $entrada->addEntrada($programa, $fuente, $tipo, $fecha, $folio);
+        $entrada->addEntrada($programa, $fuente, $tipo, $fecha, $folio,$partida);
         $entradas = ultimoRegistroEntrada();
         $ent = $entradas['idEntrada'];
         $EP->addEP($lote, $cantidad, $fechaC, $costo, $ent, $producto);

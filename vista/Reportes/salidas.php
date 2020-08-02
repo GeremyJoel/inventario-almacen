@@ -12,10 +12,7 @@ $html='
 <td width="100px">Nombre de la unidad aplicativa</td>
 <td width="400px">HOSPITAL</td>
 </tr>
-<tr>
-<td width="100px">DESCRIPCION DE LA PARTIDA PRESUPUESTAL</td>
-<td width="400px">HOSPITAL</td>
-</tr>
+<tr></tr>
 <tr></tr>
 </table>
 
@@ -26,7 +23,7 @@ $html='
 <td width="150px">Importe por programa presupuestal</td>
 </tr>';?>
 <?php
-    $sql = "SELECT * FROM ";
+    $sql = "SELECT * FROM pa";
     $result = mysqli_query($conn,$sql);
    // echo var_dump($result);
     //echo "select sum(costo_unitario) as suma from entradas as en inner join entradaproducto as ep on en.identrada = ep.entrada where numPrograma = ".$row['idPrograma']." AND fecha > '$fechaI' AND fecha < '$fechaF'";

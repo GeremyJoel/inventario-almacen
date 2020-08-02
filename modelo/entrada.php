@@ -7,6 +7,7 @@ class Entrada{
     private $movimiento;
     private $fecha;
     private $folio;
+    private $partida;
     private $db;
 
     function __construct(){
@@ -63,15 +64,16 @@ class Entrada{
         $this->folio = $folio;
     }
 
-    function addEntrada($numPrograma,$financiamiento,$movimiento,$fecha,$folio){
+    function addEntrada($numPrograma,$financiamiento,$movimiento,$fecha,$folio,$partida){
         try {
-            $sql = $this->db->prepare('INSERT INTO entradas(numPrograma,fFinanciamiento,movimiento,fecha,folio) VALUES (?,?,?,?,?)');
+            $sql = $this->db->prepare('INSERT INTO entradas(numPrograma,fFinanciamiento,movimiento,fecha,folio,partida) VALUES (?,?,?,?,?,?)');
             $data =[
             $this->numPrograma = $numPrograma,
             $this->fFinanciamiento = $financiamiento,
             $this->movimiento = $movimiento,
             $this->fecha = $fecha,
-            $this->folio = $folio
+            $this->folio = $folio,
+            $this->partida = $partida
         ];
             $sql->execute($data);
         }catch(PDOException $ex){

@@ -24,13 +24,19 @@ if(isset($_REQUEST['fechaI'])){
             header('location:../vista/Reportes/programa.php?t='.$tipo.'&fi='.$fechaI.'&ff='.$fechaF);
             break;
         case 'partidas':
+            header('location:../vista/Reportes/partidas.php?t='.$tipo.'&fi='.$fechaI.'&ff='.$fechaF);
             break;
         case 'financiamiento':
+            header('location:../vista/Reportes/financiamiento.php?t='.$tipo.'&fi='.$fechaI.'&ff='.$fechaF);
             break;
         case 'inventario':
-            break;        
+            header('location:../vista/Reportes/inventario.php?t='.$tipo.'&fi='.$fechaI.'&ff='.$fechaF);
+            break;    
+        case 'salidas':
+            header('location:../vista/Reportes/salidas.php?t='.$tipo.'&fi='.$fechaI.'&ff='.$fechaF);
+            break;    
         default:
-            # code...
+            header('location:../vista/Reportes/fuentes.php?t='.$tipo.'&fi='.$fechaI.'&ff='.$fechaF);
             break;
     }
 }

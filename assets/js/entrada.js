@@ -20,6 +20,7 @@ function addEntrada(){
     var costo = document.getElementById("costo").value;
     var producto = document.getElementById("producto").value;
     var fecha = document.getElementById("fecha").value;
+    var partida = document.getElementById("partida").value;
     var pro = document.getElementById("producto");
     var prod =pro.options[pro.selectedIndex].text;
     
@@ -33,7 +34,7 @@ function addEntrada(){
     };
     envia.open('POST','../controlador/ctrlEntrada.php');
     envia.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-    envia.send('folio='+folio+'&tipo='+tipo+'&programa='+programa+'&lote='+lote+'&fuente='+fuente+'&cantidad='+cantidad+'&costo='+costo+'&producto='+producto+'&fecha='+fecha+'&accion=agregar');
+    envia.send('folio='+folio+'&tipo='+tipo+'&programa='+programa+'&lote='+lote+'&fuente='+fuente+'&cantidad='+cantidad+'&costo='+costo+'&producto='+producto+'&fecha='+fecha+'&partida='+partida+'&accion=agregar');
 }
 
 function setEntrada(id){

@@ -11,7 +11,6 @@ function cargar(){
 }
 function addProgram(){
     var nombre = document.getElementById("nombre").value;
-    var importe = document.getElementById("importe").value;
     var numero = document.getElementById("numero").value;
 
     var env = new XMLHttpRequest();
@@ -22,7 +21,7 @@ function addProgram(){
     };
         env.open("POST",'../controlador/ctrlPrograma.php',true);
         env.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-        env.send("nombre="+nombre+"&importe="+importe+"&numero="+numero+"&accion=agregar");
+        env.send("nombre="+nombre+"&numero="+numero+"&accion=agregar");
     
 }
 

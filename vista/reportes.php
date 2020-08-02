@@ -98,8 +98,9 @@ $(document).ready(function() {
                         <option value="partidas">Partidas</option>
                         <option value="financiamiento">Fuentes de financiamiento</option>
                         <option value="inventario">Inventario de existencias</option>
+                        <option value="salidas"">Salidas</option>
                         <?php foreach($datos as $dato){ ?>
-                        <option value="$dato['descripcion'];?>"><?=$dato['descripcion'];?></option>
+                        <option value="<?=$dato['descripcion']?>"><?=$dato['descripcion'];?></option>
                         <?php } ?>
                     </select>
                     <h4>Fechas:</h4>

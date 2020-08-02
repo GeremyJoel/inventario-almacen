@@ -12,36 +12,33 @@ $html='
 <td width="100px">Nombre de la unidad aplicativa</td>
 <td width="400px">HOSPITAL</td>
 </tr>
-<tr>
-<td width="100px">DESCRIPCION DE LA PARTIDA PRESUPUESTAL</td>
-<td width="400px">HOSPITAL</td>
-</tr>
+<tr></tr>
 <tr></tr>
 </table>
 
 <table style="margin-top:20px;" border="1">
 <tr>
-<td width="15fmgfh0px">Numero del programa presupuestal</td>
-<td width="400px">Nombre del programa presupuestal</td>
-<td width="150px">Importe por programa presupuestal</td>
+<td width="150px">No. PROGRESIVO</td>
+<td width="400px">DESCRIPCION DE LA FUENTE DE FINANCIAMIENTO</td>
+<td width="150px">IMPORTE POR FUENTE DE FINANCIAMIENTO</td>
 </tr>';?>
 <?php
-    $sql = "SELECT * FROM ";
+    $sql = "SELECT * FROM ffinanciamiento";
     $result = mysqli_query($conn,$sql);
    // echo var_dump($result);
     //echo "select sum(costo_unitario) as suma from entradas as en inner join entradaproducto as ep on en.identrada = ep.entrada where numPrograma = ".$row['idPrograma']." AND fecha > '$fechaI' AND fecha < '$fechaF'";
     while($row = mysqli_fetch_array($result))
     {
-        $val = mysqli_query($conn,"select sum(costo_unitario) as suma from entradas as en inner join entradaproducto as ep on en.identrada = ep.entrada where numPrograma = ".$row['idPrograma']." AND fecha > '$fechaI' AND fecha < '$fechaF'");
+        $val = mysqli_query($conn,"select sum(costo_unitario) as suma from entradas as en inner join entradaproducto as ep on en.identrada = ep.entrada where fFinanciamiento = ".$row['idFuente']." AND fecha > '$fechaI' AND fecha < '$fechaF'");
         $valu = mysqli_fetch_array($val);
         if($valu['suma'] == NULL){
             $dat = "0.00";
         }else{
             $dat = $valu['suma'];
-        }
+        } 
         $html .= '<tr>
-        <td>'.$row['numPrograma'].'</td>   
-        <td>'.$row['nomPrograma'].'</td> 
+        <td>'.$row['numFuente'].'</td>   
+        <td>'.$row['descripcion'].'</td> 
         <td>$ '.$dat.'</td> 
         </tr>';
     }

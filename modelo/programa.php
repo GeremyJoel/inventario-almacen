@@ -43,13 +43,12 @@ class Programa{
         $this->importe = $importe;
     }
 
-    function addPrograma($numPrograma,$nomPrograma,$importe){
+    function addPrograma($numPrograma,$nomPrograma){
         try{
-            $sql = $this->db->prepare('INSERT INTO programa(numPrograma,nomPrograma,importe) VALUES(?,?,?)');
+            $sql = $this->db->prepare('INSERT INTO programa(numPrograma,nomPrograma) VALUES(?,?)');
             $data = [
                 $this->numPrograma = $numPrograma,
-                $this->nomPrograma = $nomPrograma,
-                $this->importe = $importe
+                $this->nomPrograma = $nomPrograma
             ];
             $sql->execute($data);
         }catch(PDOException $ex){

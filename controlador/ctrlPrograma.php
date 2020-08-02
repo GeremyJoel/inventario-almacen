@@ -6,10 +6,9 @@ $accion = $_REQUEST['accion'];
 switch ($accion) {
     case 'agregar':
         $nombre = $_REQUEST['nombre'];
-        $importe = $_REQUEST['importe'];
         $numero = $_REQUEST['numero'];
         $pro = new Programa();
-        $pro->addPrograma($numero,$nombre,$importe);
+        $pro->addPrograma($numero,$nombre);
 
         break;
     
